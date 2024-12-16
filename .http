@@ -1,0 +1,55 @@
+@apiusers= http://localhost:8080/api/users
+
+
+###-----  usuario por id -- ### 
+
+GET {{apiusers}}/6753d8fa1a3b240ce9729b19
+
+
+
+###-----  deleted by id -- ### 
+DELETE {{apiusers}}/675a7b4b98e69ce9e97c2a4c
+###-----  post de usaurio -- ### 
+
+POST http://localhost:8080/api/users/register HTTP/1.1
+Content-Type: application/json
+
+{
+  "firstName": "duvan",
+  "lastName": "aponte",
+  "email": "duvan.aponte@psb.edu.co",
+  "phone": "3142011509",
+  "password": "0000",
+  "identificacion": "000000",
+  "address": "ac 15 numero 12b- 23",
+  "country": "colombia",
+  "city": "Villavicencio",
+  "rol": "solicitanteCredito",
+  "photeUrl": "https://cdn-icons-png.flaticon.com/512/3135/3135768.png",
+  "birthdate":"10-10-1997"
+}
+### verificar la cuenta
+POST http://localhost:8080/api/verify-otp HTTP/1.1
+Content-Type: application/json
+
+{
+  "email": "duvan.aponte@psb.edu.co",
+  "otp": "809356"
+}
+  
+
+    
+
+
+### solicitud de login
+POST http://localhost:8080/api/users/login HTTP/1.1
+Content-Type: application/json
+
+ {
+        "email":"perpsicool@restaurant.com",
+        "password":"0000"
+}
+  
+
+
+
