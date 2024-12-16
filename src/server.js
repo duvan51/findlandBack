@@ -41,7 +41,16 @@ mongoose.connect(mongo_url)
     .then(() => console.log("Conexión exitosa!"))
     .catch((error) => console.log("Error en la conexión", error));
 
-app.use(cors());
+
+const corsOptions = {
+        origin: '*', // Ajusta tu origen aquí
+        methods: ['GET', 'POST', 'PUT', 'DELETE'],
+        allowedHeaders: ['Content-Type', 'Authorization'],
+        credentials: true,  // Asegúrate de que se envíen cookies
+    };
+    
+
+app.use(cors(corsOptions));
 app.use(express.json());
 app.use(cookieParser());
 
